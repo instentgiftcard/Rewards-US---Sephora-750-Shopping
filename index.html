@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards US - Sephora $750 Shopping</title>
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #fff;
+      margin: 20px 0 10px;
+      animation: pulse 2s infinite;
+    }
+
+    .hero-image {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navigation Bar */
+    .nav {
+      position: fixed;
+      top: 0;
+      right: 10px;
+      z-index: 10;
+    }
+
+    .menu-btn {
+      font-size: 1.5rem;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu a {
+      display: block;
+      text-decoration: none;
+      padding: 5px 10px;
+      color: #333;
+    }
+
+    /* Form Section */
+    .form-container {
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-container input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .form-container input:focus {
+      transform: scale(1.05);
+    }
+
+    .form-container button {
+      background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      animation: pulse 2s infinite;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+
+    /* CSS Animations */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 105, 135, 1);
+      }
+    }
+
+    /* Pop-up Notification */
+    .popup {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.8rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Title Section -->
+  <h1>Claim Your $750 Sephora Gift Card!</h1>
+  <img src="https://i.ibb.co/7Jnfg81/7a83ef1b983e.webp" alt="Sephora Gift Card" class="hero-image">
+
+  <!-- Navigation Bar -->
+  <div class="nav">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+      <a href="https://go4affm.com/c/?p=40201&o=18606&subid=home">Home</a>
+      <a href="https://go4affm.com/c/?p=40201&o=18606&subid=about">About</a>
+      <a href="https://go4affm.com/c/?p=40201&o=18606&subid=support">Support</a>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-container">
+    <input type="text" id="name" placeholder="Enter Your Name" required>
+    <input type="email" id="email" placeholder="Enter Your Email" required>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+
+  <!-- Countdown Timer -->
+  <div class="countdown">
+    Offer Expires In: <span id="timer">03:00</span>
+  </div>
+
+  <!-- Pop-up Notification -->
+  <div class="popup" id="popup">
+    7238 People have already claimed this offer!
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Limited Time Offer. Terms & Conditions Apply.
+  </footer>
+
+  <script>
+    // Toggle Menu
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Submit Form
+    function submitForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      if (name && email) {
+        const affiliateLink = "https://go4affm.com/c/?p=40201&o=18606&subid=1234";
+        window.location.href = affiliateLink;
+      } else {
+        alert("Please fill in all fields!");
+      }
+    }
+
+    // Countdown Timer
+    const timer = document.getElementById('timer');
+    let time = 180;
+
+    setInterval(() => {
+      if (time <= 0) {
+        timer.innerHTML = "00:00";
+      } else {
+        time--;
+        const minutes = String(Math.floor(time / 60)).padStart(2, '0');
+        const seconds = String(time % 60).padStart(2, '0');
+        timer.innerHTML = `${minutes}:${seconds}`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
